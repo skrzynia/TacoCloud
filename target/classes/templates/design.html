@@ -8,7 +8,7 @@
 		<h1>Przygotuj wlasne taco</h1>
 		<img th:src="@{images/TacoCloud.jpg}" />
 		
-		<form method="post" th:object="${design}">
+		<form method="post" th:object="${taco}">
 		<div class="grid">
 			<div class="ingredient-group" id="wraps">
 				<h3>Wybierz rodzaj maki</h3>
@@ -29,7 +29,7 @@
 				<div class="ingredient-group" id="cheeses">
 				<h3>Wybierz sery</h3>
 				<div th:each="ingredient : ${cheese}">
-					<input name="ingredients" type ="checkbox" th:value="${ingredient.id}" />
+					<input th:field="*{ingredients}" type ="checkbox" th:value="${ingredient.id}" />
 					<span th:text="${ingredient.name}">Skladnik</span><br/>
 				</div>
 				</div>
